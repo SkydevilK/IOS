@@ -21,7 +21,7 @@
                                 <state key="normal" image="button_play"/>
                                 <state key="selected" image="button_pause"/>
                                 <connections>
-                                    <action selector="touchUpPlayPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Q6-kG-LvN"/>
+                                    <action selector="touchUpPlayPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bN1-gn-P3P"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-1B-Thy">
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="q7B-Ud-q3m">
-                                <rect key="frame" x="28" y="467" width="356" height="30"/>
+                                <rect key="frame" x="106.84262692619313" y="500" width="199.99999999999994" height="30.000000000000028"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -46,7 +46,7 @@
                     <connections>
                         <outlet property="playPauseButton" destination="Gxs-CJ-kp2" id="S3l-Km-lAY"/>
                         <outlet property="progressSlider" destination="q7B-Ud-q3m" id="Mbj-Nn-L5o"/>
-                        <outlet property="timeLabel" destination="wN0-1B-Thy" id="1Yx-Sg-7F2"/>
+                        <outlet property="timeLabel" destination="wN0-1B-Thy" id="Ybe-RK-cby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

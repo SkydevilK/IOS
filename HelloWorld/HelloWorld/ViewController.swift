@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    //click event
+    @IBAction func Click_moveButton(_ sender: Any) {
+        print("Click Move")
+    }
 }
 

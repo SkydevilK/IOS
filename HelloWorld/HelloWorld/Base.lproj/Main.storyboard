@@ -15,17 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-wj-oV6">
-                                <rect key="frame" x="125.5" y="318.5" width="124.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs5-IB-XWo">
+                                <rect key="frame" x="161" y="314" width="53" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Move"/>
+                                <connections>
+                                    <action selector="Click_moveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uN2-3E-H5V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CuG-wj-oV6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8UK-TJ-cKM"/>
-                            <constraint firstItem="CuG-wj-oV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M8r-2k-loh"/>
+                            <constraint firstItem="Bs5-IB-XWo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ad-Pk-ezL"/>
+                            <constraint firstItem="Bs5-IB-XWo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TBs-tD-57l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

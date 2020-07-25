@@ -11,11 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //TableView : 테이블로 된 뷰 -> 여러개의 행이 모여있는 뷰(화면)
     
-    // 1. http 통신 방법 - urlSession
+    // http 통신 방법 - urlSession
     @IBOutlet weak var TableViewMain: UITableView!
     
     var newsData : Array<Dictionary<String,Any>>?
     func getNews(){
+        // Http 통신은 BackGround 작업
         let task = URLSession.shared.dataTask(with: URL(string: "http://newsapi.org/v2/top-headlines?country=kr&category=technology&apiKey=")!) { (data, response, error) in
             if let dataJson = data {
                 // json parsing
@@ -25,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let articles = json["articles"] as! Array<Dictionary<String, Any>>
                     self.newsData = articles
                     
+                    // 그리는 것은 Main 쓰레드에서 해줘야 하므로 비동기
                     DispatchQueue.main.async {
                         self.TableViewMain.reloadData() // Main
                     }
@@ -35,10 +37,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         task.resume()
     }
-    // 2. JSON 데이터 형태
-    // 3. TableView 매칭 <- 통보 후 그리기
-    // BackGround에서 네트워크 작업을 한다.
-    // UI는 Main
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 데이터의 개수
         if let news = newsData {
@@ -76,7 +74,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Click
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row + 1)")
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "NewsDetailController") as! NewsDetailController
+        if let news = newsData {
+            let row = news[indexPath.row]
+            if let r = row as? Dictionary<String, Any> {
+                if let imageUrl = r["urlToImage"] as? String {
+                    controller.imageUrl = imageUrl;
+                }
+                if let desc = r["description"] as? String{
+                    controller.desc = desc;
+                }
+            }
+        }
+        
+        // 이동 - 수동
+        showDetailViewController(controller, sender: nil)
+    }
+    
+    //Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier, id == "NewsDetail"{
+            if let controller = segue.destination as? NewsDetailController{
+                
+                if let news = newsData {
+                    if let indexPath = TableViewMain.indexPathForSelectedRow{
+                        let row = news[indexPath.row]
+                        if let r = row as? Dictionary<String, Any> {
+                            if let imageUrl = r["urlToImage"] as? String {
+                                controller.imageUrl = imageUrl;
+                            }
+                            if let desc = r["description"] as? String{
+                                controller.desc = desc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 이동 - 자동
     }
     
     override func viewDidLoad() {

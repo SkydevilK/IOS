@@ -14,10 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    //click event
     @IBAction func Click_moveButton(_ sender: Any) {
-        print("Click Move")
+        //storyboard find controller : DetailController
+        
+        // Optional Binding
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DetailController"){
+            //push controller = navi
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
-

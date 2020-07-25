@@ -13,6 +13,7 @@
 		8827AB2124CBFB5800FC90D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8827AB1F24CBFB5800FC90D9 /* Main.storyboard */; };
 		8827AB2324CBFB5A00FC90D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8827AB2224CBFB5A00FC90D9 /* Assets.xcassets */; };
 		8827AB2624CBFB5A00FC90D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8827AB2424CBFB5A00FC90D9 /* LaunchScreen.storyboard */; };
+		887B181924CC09C400C5FA1B /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B181824CC09C400C5FA1B /* DetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8827AB2224CBFB5A00FC90D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8827AB2524CBFB5A00FC90D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8827AB2724CBFB5A00FC90D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		887B181824CC09C400C5FA1B /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8827AB2224CBFB5A00FC90D9 /* Assets.xcassets */,
 				8827AB2424CBFB5A00FC90D9 /* LaunchScreen.storyboard */,
 				8827AB2724CBFB5A00FC90D9 /* Info.plist */,
+				887B181824CC09C400C5FA1B /* DetailController.swift */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887B181924CC09C400C5FA1B /* DetailController.swift in Sources */,
 				8827AB1E24CBFB5800FC90D9 /* ViewController.swift in Sources */,
 				8827AB1A24CBFB5800FC90D9 /* AppDelegate.swift in Sources */,
 				8827AB1C24CBFB5800FC90D9 /* SceneDelegate.swift in Sources */,
